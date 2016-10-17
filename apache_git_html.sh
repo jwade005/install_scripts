@@ -14,4 +14,4 @@ sudo yum -y install git
 sudo git clone https://github.com/jwade005/install_scripts.git
 
 echo "Publishing Website..."
-sudo mv install_scripts/index.html /var/www/html
+sudo cp install_scripts/index.html /var/www/html
