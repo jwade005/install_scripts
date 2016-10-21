@@ -1,0 +1,7 @@
+AuthUserFile /var/www/html/.htpasswd
+AuthType Basic
+AuthName "Jwade005's Secret Page"
+
+<Files "page2.html">
+   Require valid-user
+</Files>
