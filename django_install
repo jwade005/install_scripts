@@ -1,11 +1,10 @@
 #!/bin/bash
 
-echo "Current python version:"
+echo "Current version of Python:"
 
 python --version
 
-
-echo "installing virtualenv so we can give django its own version of python"
+echo "Installing virtualenv to give Django it's own version of Python..."
 
 # here you can install with updates or without updates.  To install python pip with a full kernel upgrade (not somthing you would do in prod, but
 # definately somthing you might do to your testing or staging server: sudo yum update
@@ -34,13 +33,13 @@ sleep 5
 cd django
 sudo virtualenv django-env
 
-echo "activating virtualenv"
+echo "Activating virtualenv..."
 
 source /opt/django/django-env/bin/activate
 
-echo "to switch out of virtualenv, type deactivate"
+echo "To switch out of virtualenv, type deactivate."
 
-echo "now using:"
+echo "Now using this version of Python:"
 
 which python
 sudo chown -R ec2-user /opt/django
@@ -49,13 +48,13 @@ echo "installing django"
 
 pip install django
 
-echo "django admin is version:"
+echo "Django admin is version:"
 
 django-admin --version
 django-admin startproject project1
 
-echo "here's our new django project dir"
+echo "This is the new django project directory..."
 
 tree project1
 
-echo "go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/"
+echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
