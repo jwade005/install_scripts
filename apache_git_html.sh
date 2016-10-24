@@ -14,7 +14,7 @@ sudo yum -y install git
 git clone https://github.com/jwade005/install_scripts.git
 
 echo "Publishing Website..."
-sudo cp install_scripts/index.html /var/www/html
+sudo sh -c 'cat install_scripts/index.html > /var/www/html/index.html
 
 echo "Adjusting Permissions..."
 sudo chmod 644 /var/www/html/index.html
