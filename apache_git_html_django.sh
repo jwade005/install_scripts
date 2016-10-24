@@ -16,7 +16,7 @@ git clone https://github.com/jwade005/install_scripts.git
 
 echo "Publishing Website..."
 sudo sh -c 'cat install_scripts/index.html > /var/www/html/index.html'
-sudo sh -c 'cat install_scripts/page2.html > /var/www/html/index.html'
+sudo sh -c 'cat install_scripts/page2.html > /var/www/html/page2.html'
 
 echo "Adjusting Permissions..."
 sudo chmod 644 /var/www/html/index.html
@@ -27,11 +27,11 @@ sudo sed -i "151s/None/AuthConfig/1" /etc/httpd/conf/httpd.conf
 
 echo "Adding .htaccess and .htpasswrd files..."
 sudo sh -c 'cat install_scripts/.htaccess > /var/www/html/.htaccess'
-sudo sh -c 'cat install_scripts/.htpasswrd > /val/www/html/.htpasswrd'
+sudo sh -c 'cat install_scripts/.htpasswd > /val/www/html/.htpasswd'
 
 echo "Adjusting permissions..."
 sudo chmod 644 /var/www/html/.htaccess
-sudo chmod 644 /var/www/html/.htpasswrd
+sudo chmod 644 /var/www/html/.htpasswd
 
 echo "Restarting HTTP service..."
 sudo service httpd restart
