@@ -81,9 +81,9 @@ echo "Now using this version of Python:"
 which python
 sudo chown -R ec2-user /opt/django
 
-echo "installing django"
+echo "Installing Django"
 
-pip install django
+sudo pip install Django
 
 echo "Django admin is version:"
 
@@ -92,6 +92,7 @@ django-admin startproject project1
 
 echo "This is the new django project directory..."
 
+sudo yum install tree
 tree project1
 
 echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
