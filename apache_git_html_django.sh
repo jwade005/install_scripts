@@ -27,7 +27,7 @@ sudo sed -i "151s/None/AuthConfig/1" /etc/httpd/conf/httpd.conf
 
 echo "Adding .htaccess and .htpasswrd files..."
 sudo sh -c 'cat install_scripts/.htaccess > /var/www/html/.htaccess'
-sudo sh -c 'cat install_scripts/.htpasswd > /val/www/html/.htpasswd'
+sudo sh -c 'cat install_scripts/.htpasswd > /var/www/html/.htpasswd'
 
 echo "Adjusting permissions..."
 sudo chmod 644 /var/www/html/.htaccess
