@@ -83,7 +83,7 @@ sudo chown -R ec2-user /opt/django
 
 echo "Installing Django"
 
-sudo pip install Django
+pip install Django
 
 echo "Django admin is version:"
 
