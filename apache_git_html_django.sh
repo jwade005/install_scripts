@@ -52,8 +52,9 @@ echo "Installing virtualenv to give Django it's own version of Python..."
 
 # python pip is a package manager for python...
 
-sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-latest-7.noarch.rpm
+sudo rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
 sudo yum -y install python-pip
+
 
 # Now we're installing virtualenv, which will allow us to create a python installation and environment, just for our Django server
 
