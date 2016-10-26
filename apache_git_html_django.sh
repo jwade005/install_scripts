@@ -100,10 +100,4 @@ tree project1
 
 echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
 
-echo "Starting Django server.... Visit (AWS instance IP):8000..."
-echo "Opening port 8000..."
-
-cd /opt/django/project1/
-pip install Django
-python manage.py runserver 0.0.0.0:8000
 
