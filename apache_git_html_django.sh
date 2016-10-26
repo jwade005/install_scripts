@@ -13,7 +13,6 @@ sudo systemctl start httpd.service
 echo "Cloning jwade005's github..."
 sudo yum -y install git
 git clone https://github.com/jwade005/install_scripts.git
-
 echo "Publishing Website..."
 sudo sh -c 'cat install_scripts/index.html > /var/www/html/index.html'
 sudo sh -c 'cat install_scripts/page2.html > /var/www/html/page2.html'
@@ -24,7 +23,6 @@ sudo setenforce 0
 
 echo "Adjusting http.conf file..."
 sudo sed -i "151s/None/AuthConfig/1" /etc/httpd/conf/httpd.conf
-
 echo "Adding .htaccess and .htpasswrd files..."
 sudo sh -c 'cat install_scripts/.htaccess > /var/www/html/.htaccess'
 
@@ -54,7 +52,7 @@ echo "Installing virtualenv to give Django it's own version of Python..."
 
 # python pip is a package manager for python...
 
-sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-2.noarch.rpm
+sudo rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-latest-7.noarch.rpm
 sudo yum -y install python-pip
 
 # Now we're installing virtualenv, which will allow us to create a python installation and environment, just for our Django server
