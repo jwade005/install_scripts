@@ -101,5 +101,6 @@ echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin fi
 echo "Starting Django server.... Visit (AWS instance IP):8000..."
 echo "Opening port 8000..."
 
-source /opt/django/project1/python manage.py runserver 0.0.0.0:8000
+cd /opt/django/project1/
+python manage.py runserver 0.0.0.0:8000
 
