@@ -27,6 +27,7 @@ sudo sed -i "151s/None/AuthConfig/1" /etc/httpd/conf/httpd.conf
 
 echo "Adding .htaccess and .htpasswrd files..."
 sudo sh -c 'cat install_scripts/.htaccess > /var/www/html/.htaccess'
+
 sudo sh -c 'cat install_scripts/.htpasswd > /var/www/html/.htpasswd'
 
 echo "Adjusting permissions..."
@@ -96,3 +97,10 @@ sudo yum -y install tree
 tree project1
 
 echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
+
+echo "Starting Django server.... Visit (AWS instance IP):8000...
+
+python -m django --version
+cd /opt/django/project1
+python manage.py runserver 0.0.0.0:8000
+
