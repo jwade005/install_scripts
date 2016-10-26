@@ -54,7 +54,7 @@ echo "Installing virtualenv to give Django it's own version of Python..."
 
 # python pip is a package manager for python...
 
-sudo rpm -iUvh https://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
+sudo yum -y install epel-release
 sudo yum -y install python-pip
 
 # Now we're installing virtualenv, which will allow us to create a python installation and environment, just for our Django server
@@ -85,7 +85,6 @@ sudo chown -R ec2-user /opt/django
 
 echo "Installing Django"
 
-cd /opt/django/django-env/bin
 pip install Django
 
 echo "Django admin is version:"
@@ -99,5 +98,8 @@ sudo yum -y install tree
 tree project1
 
 echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
+
+cd /opt/django/project1
+python manage.py runserver 0.0.0.0:8000
 
 
