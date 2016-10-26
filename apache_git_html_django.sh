@@ -98,9 +98,16 @@ tree project1
 
 echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
 
-echo "Starting Django server.... Visit (AWS instance IP):8000...
+echo "Starting Django server.... Visit (AWS instance IP):8000..."
+
+echo "Activating Django virtual-env..."
 
 python -m django --version
+cd /opt/django/django-env
+. bin/activate
+
+echo "Opening port 8000..."
+
 cd /opt/django/project1
 python manage.py runserver 0.0.0.0:8000
 
