@@ -49,6 +49,7 @@ echo "Installing virtualenv to give Django it's own version of Python..."
 
 # for a prod install (no update)
 
+
 # this adds the noarch release reposatory from the fedora project, wich contains python pip
 
 # python pip is a package manager for python...
@@ -103,5 +104,6 @@ echo "Starting Django server.... Visit (AWS instance IP):8000..."
 echo "Opening port 8000..."
 
 cd /opt/django/project1/
+pip install Django
 python manage.py runserver 0.0.0.0:8000
 
