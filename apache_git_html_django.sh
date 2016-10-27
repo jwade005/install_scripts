@@ -105,6 +105,13 @@ sudo chmod 644 /opt/django/project1/manage.py
 sudo setenforce 0
 
 cd /opt/django/project1
+
+echo "Migrating database files..."
+
+python manage.py migrate
+
+echo "Django is now accessible from the web at [server IP]:8000..."
+
 python manage.py runserver 0.0.0.0:8000
 
 
