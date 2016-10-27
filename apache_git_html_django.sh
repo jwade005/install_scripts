@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 echo "Installing Apache server..."
@@ -63,7 +62,7 @@ cd /opt
 
 # we're going to install our django libs in /opt, often used for optional or add-on.  /usr/local is also a perfectly fine place for new apps
 
-# we want to make this env accisible to the ec2-user at first, because we don't want to have to run it as root.
+# we want to make this env accessible to the ec2-user at first, because we don't want to have to run it as root.
 
 sudo mkdir django
 sudo chown -R ec2-user django
@@ -97,6 +96,13 @@ sudo yum -y install tree
 tree project1
 
 echo "Go to https://docs.djangoproject.com/en/1.10/intro/tutorial01/ to begin first Django Project!"
+
+echo "Starting Django server..."
+
+source /opt/django/django-env/bin/activate
+
+sudo chmod 644 /opt/django/project1/manage.py
+sudo setenforce 0
 
 cd /opt/django/project1
 python manage.py runserver 0.0.0.0:8000
