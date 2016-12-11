@@ -45,8 +45,8 @@ def publish_website():
    os.system('sed -i "151s/None/AuthConfig/1" /etc/httpd/conf/httpd.conf')
 
    print('Adding .htaccess and .htpasswd files.')
-   os.system('sh -c "cat python_deployment/.htaccess > /var/www/html/.htaccess"')
-   os.system('sh -c "cat python_deployment/.htpasswd > /var/www/html/.htpasswd"')
+   os.system('sh -c "cat /python_deployment/.htaccess > /var/www/html/.htaccess"')
+   os.system('sh -c "cat /python_deployment/.htpasswd > /var/www/html/.htpasswd"')
 
    print('Adjusting Permissions.')
    os.system('chmod 644 /var/www/html/.htaccess')
@@ -68,7 +68,7 @@ import os
 import subprocess
 def django_install():
     print('Installing Django Web Framework.')
-    os.chdir('install_scripts')
+    os.chdir('python_deployment')
     os.system('chmod +x django_install')
     subprocess.call(['./django_install'])
 
@@ -102,7 +102,7 @@ mailx()
 import os
 def crontab():
     print('Creating crontab entry for Server Alert emails every 30 minutes.')
-    os.system('chmod +x automation_scripts/server_alert.sh')
+    os.system('chmod +x python_deployment/server_alert.sh')
     os.system('(crontab -l 2>/dev/null; echo "0,30 * * * * /home/ec2-user/automation_scripts/server_alert.sh | mail -s \"Server Alert\" wadejs@icloud.com") | crontab - ')
     os.system('crontab -l')
 
