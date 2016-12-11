@@ -68,7 +68,7 @@ import os
 import subprocess
 def django_install():
     print('Installing Django Web Framework.')
-    os.chdir('install_scripts')
+    os.chdir('python_deployment')
     os.system('chmod +x django_install')
     subprocess.call(['./django_install'])
 
@@ -78,10 +78,10 @@ import os
 def mysite():
     print('Installing MySite Django Polling Project from GitHub.')
     os.chdir('/home/ec2-user')
-    os.system('git clone https://github.com/jwade005/mysite.git')
+    os.system('git clone https://github.com/jwade005/mysite.git /python_deployment')
 
     print('Moving MySite files to Django project directory.')
-    os.system('mv mysite /opt/django')
+    os.system('mv /python_deployment/mysite /opt/django')
 
     print('Adjusting permissions for MySite.')
     os.system('chown -R ec2—user /opt/django')
