@@ -68,7 +68,7 @@ import os
 import subprocess
 def django_install():
     print('Installing Django Web Framework.')
-    os.chdir('python_deployment')
+    os.chdir('/python_deployment')
     os.system('chmod +x django_install')
     subprocess.call(['./django_install'])
 
