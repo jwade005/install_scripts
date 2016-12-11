@@ -35,8 +35,8 @@ clone_github()
 import os
 def publish_website():
    print('Publishing Website.')
-   os.system('sh -c "cat python_deployment/index.html > /var/www/html/index.html"')
-   os.system('sh -c "cat python_deployment/page2.html > /var/www/html/page2.html"')
+   os.system('sh -c "cat /python_deployment/index.html > /var/www/html/index.html"')
+   os.system('sh -c "cat /python_deployment/page2.html > /var/www/html/page2.html"')
 
    print('Adjusting Permissions.')
    os.system('chmod 644 /var/www/html/index.html')
