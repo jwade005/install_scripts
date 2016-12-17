@@ -28,7 +28,6 @@ cd /opt
 # we want to make this env accisible to the ec2-user at first, because we don't want to have to run it as root.
 
 mkdir django
-chown -R ec2-user django
 sleep 5
 cd django
 virtualenv django-env
